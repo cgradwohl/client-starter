@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --config build-utils/webpack.config.js --env.environment=dev",
     "build": "webpack --config build-utils/webpack.config.js --env.environment=prod",
     "build:analyze": "npm run build -- --env.plugin=bundleanalyzer --env.plugin=bundlevisualizer",
+    "serve": "npx serve dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
