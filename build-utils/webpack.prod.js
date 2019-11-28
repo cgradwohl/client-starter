@@ -1,14 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const { DefinePlugin } = require('webpack');
+const Env = require('dotenv-webpack');
 
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
   plugins: [
-    new DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
+    new Env({
+      path: './.env.production',
     }),
   ],
 };
