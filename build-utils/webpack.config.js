@@ -3,7 +3,18 @@
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 
-module.exports = ({ env }) => {
-  const envConfig = require(`./webpack.${env}.js`);
-  return webpackMerge(commonConfig, envConfig);
+const getPlugins = (pluginsArgs) => {
+  const plugins = Array.isArray(pluginsArgs)
+    ? pluginsArgs
+    : [pluginsArgs];
+
+  return plugins
+    .filter(Boolean)
+    .map((name) => require(`./plugins/webpack.${name}.js`));
+};
+
+module.exports = ({ environment, plugin }) => {
+  const environmentConfig = require(`./webpack.${environment}.js`);
+
+  return webpackMerge(commonConfig, environmentConfig, ...getPlugins(plugin));
 };

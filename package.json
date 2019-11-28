@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config build-utils/webpack.config.js --env.env=dev",
-    "build": "webpack --config build-utils/webpack.config.js --env.env=prod",
+    "start": "webpack-dev-server --config build-utils/webpack.config.js --env.environment=dev",
+    "build": "webpack --config build-utils/webpack.config.js --env.environment=prod",
+    "build:analyze": "npm run build -- --env.plugin=bundleanalyzer --env.plugin=bundlevisualizer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -29,9 +30,11 @@
     "html-webpack-plugin": "^3.2.0",
     "react-hot-loader": "^4.12.18",
     "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "dependencies": {
     "react": "^16.12.0",
