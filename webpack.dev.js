@@ -1,7 +1,11 @@
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -21,6 +25,11 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Client Starter',
+      template: './src/index.html',
+    }),
   ],
   devServer: {
     contentBase: './dist',
