@@ -1,12 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const webpack = require('webpack');
+const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
   entry: './src/index.js',
-  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -20,12 +18,11 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: `${__dirname}/dist`,
+    path: path.resolve(__dirname, '../', 'dist'),
     publicPath: '/',
     filename: 'bundle.js',
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Client Starter',
@@ -34,6 +31,5 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
-    hot: true,
   },
 };

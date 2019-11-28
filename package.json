@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.dev.js",
-    "build": "webpack --config ./webpack.prod.js",
+    "start": "webpack-dev-server --config build-utils/webpack.config.js --env.env=dev",
+    "build": "webpack --config build-utils/webpack.config.js --env.env=prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -29,7 +29,8 @@
     "react-hot-loader": "^4.12.18",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "react": "^16.12.0",
