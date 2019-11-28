@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const Env = require('dotenv-webpack');
+const Environment = require('dotenv-webpack');
 
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
   plugins: [
-    new Env({
+    new Environment({
       path: './.env.production',
     }),
   ],
