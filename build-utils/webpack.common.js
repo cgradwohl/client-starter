@@ -18,6 +18,15 @@ module.exports = {
           loader: 'url-loader',
         },
       },
+      {
+        test: /\.(scss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
   resolve: {

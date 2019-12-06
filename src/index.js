@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import WindowProvider from './contexts/Window';
 
-const title = 'hello creature...';
+import Layout from './components/Layout';
 
-ReactDOM.render(
-  <App title={title} />,
-  document.getElementById('app'),
+import App from './components/App';
+
+import './styles/index.scss';
+
+const Dashboard = () => (
+  <WindowProvider>
+    <Layout>
+      <App />
+    </Layout>
+  </WindowProvider>
 );
 
-// module.hot.accept();
+ReactDOM.render(
+  <Dashboard />,
+  document.getElementById('dashboard'),
+);
+
+if (process.env.NODE_ENV === 'development') {
+  module.hot.accept();
+}

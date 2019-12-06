@@ -1,38 +1,8 @@
-// // Libraries and helpers
-// // ---------
-// @import 'lib/lib';
-// @import 'helpers/helpers';
+// Theme
+@import 'theme.scss';
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// // Variables
-// // ---------
-// @import 'variables/colors';
-// @import 'variables/typography';
-// @import 'variables/breakpoints';
-// @import 'variables/themes'; // only when necessary
+// ---------------------------------------------------------------------------- //
 
-// // Reset and base files
-// // --------------------
-// @import 'base/base';
-
-// // Layouts
-// // -------
-// @import 'layouts/layouts';
-
-// // Objects
-// // -------
-// @import 'objects/buttons';
-// @import 'objects/input';
-// @import 'objects/typography';
-// // Other objects as necessary
-
-// // Components
-// // ----------
-// @import 'components/component-name-1';
-// @import 'components/component-name-2';
-// @import 'components/component-name-3';
-// @import 'components/component-name-4';
-// // Other components as necessary
-
-// // Utilities
-// // ----------
-// @import 'utilities';
+// Components (***APPLICATION STYLES MUST BE DEFINED AFTER THEME***)
+@import './components/app.scss';
