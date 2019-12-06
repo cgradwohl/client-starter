@@ -2,6 +2,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -11,12 +12,6 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
-      },
-      {
-        test: /\.(woff|woff2)$/,
-        use: {
-          loader: 'url-loader',
-        },
       },
       {
         test: /\.(scss)$/,
@@ -38,6 +33,7 @@ module.exports = {
       title: 'Client Starter',
       template: './src/index.html',
     }),
+    new CompressionPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, '../', 'dist'),
