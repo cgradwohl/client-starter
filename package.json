@@ -48,6 +48,11 @@
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "@reach/router": "^1.2.1",
     "bootstrap": "^4.4.1",
     "react": "^16.12.0",
