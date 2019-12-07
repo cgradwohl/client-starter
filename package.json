@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config build-utils/webpack.config.js --env.environment=dev",
     "build": "webpack --config build-utils/webpack.config.js --env.environment=prod",
     "build:analyze": "npm run build -- --env.plugin=bundleanalyzer --env.plugin=bundlevisualizer",
-    "serve": "npx serve dist",
+    "serve": "http-server dist -p 5000 --push-state",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -37,6 +37,7 @@
     "postcss-loader": "^3.0.0",
     "react-hot-loader": "^4.12.18",
     "sass-loader": "^8.0.0",
+    "spa-http-server": "^0.9.0",
     "style-loader": "^1.0.1",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.2",
@@ -47,6 +48,7 @@
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "bootstrap": "^4.4.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",

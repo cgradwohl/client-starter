@@ -9,7 +9,4 @@ module.exports = {
       path: './.env.production',
     }),
   ],
-  devServer: {
-    contentBase: './dist',
-  },
 };

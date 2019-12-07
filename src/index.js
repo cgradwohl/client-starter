@@ -1,25 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import WindowProvider from './contexts/Window';
+import { Router } from '@reach/router';
 
 import Layout from './components/Layout';
 
-import App from './components/App';
+import Admin from './pages/Admin';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 import './styles/index.scss';
 
-const Dashboard = () => (
-  <WindowProvider>
-    <Layout>
-      <App />
-    </Layout>
-  </WindowProvider>
+const App = () => (
+  <Layout>
+    <Router>
+      <Admin path="/admin" />
+      <Dashboard path="/dashboard" />
+      <Login path="/" />
+    </Router>
+  </Layout>
 );
 
 ReactDOM.render(
-  <Dashboard />,
-  document.getElementById('dashboard'),
+  <App />,
+  document.getElementById('app'),
 );
 
 if (process.env.NODE_ENV === 'development') {
