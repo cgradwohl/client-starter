@@ -33,3 +33,18 @@ const WindowProvider = ({ children }) => {
 export default WindowProvider;
 
 export const useWindowContext = () => useContext(WindowContext);
+
+export const ResponsiveView = ({ breakpoint, renderMobile, renderDesktop }) => {
+  const { width } = useWindowContext();
+
+  return (width > breakpoint ? renderDesktop() : renderMobile());
+};
+
+/**
+ * use it like diss
+ * <ResponsiveView
+    breakPoint={767}
+    renderDesktop={() => <DesktopLayout>{children}</DesktopLayout>}
+    renderMobile={() => <MobileLayout>{children}</MobileLayout>}
+  />
+ */
