@@ -6,6 +6,7 @@ import { Router } from '@reach/router';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import icons from './utils/icons';
 
+// NOTE: we will remove this layout, each page should have its own layout :)
 import Layout from './components/Layout';
 
 import Admin from './pages/Admin';
