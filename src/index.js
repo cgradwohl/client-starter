@@ -11,5 +11,6 @@ ReactDOM.render(
 );
 
 if (process.env.NODE_ENV === 'development') {
+  console.log('WASS HANNIN');
   module.hot.accept();
 }
